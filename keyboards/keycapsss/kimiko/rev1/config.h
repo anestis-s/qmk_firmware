@@ -41,25 +41,30 @@
 /* SK6812 RGB LED */
 #define RGB_DI_PIN D3
 
-#ifdef RGBLIGHT_ENABLE
-#   define RGBLED_NUM 60  // Total number of LEDs
-#   define RGBLED_SPLIT { 30, 30 } // LEDs per side
-#   define RGBLIGHT_SPLIT
+#ifdef RGB_MATRIX_ENABLE
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
+#    define DRIVER_LED_TOTAL RGBLED_NUM
+#    define RGBLED_NUM 60  // Number of LEDs
+#    define RGB_MATRIX_SPLIT { 30, 30 }  	// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.
+#    define SPLIT_TRANSPORT_MIRROR  // If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable
 #endif
 
-// Limit the power draw
-#ifdef IOS_DEVICE_ENABLE
-  #define RGBLIGHT_LIMIT_VAL 40
-#else
-  #define RGBLIGHT_LIMIT_VAL 80
-#endif
 
-#ifdef ENCODER_ENABLE
-#   define ENCODERS_PAD_A { F4 }
-#   define ENCODERS_PAD_B { F5 }
-#   define ENCODERS_PAD_A_RIGHT { F4 }
-#   define ENCODERS_PAD_B_RIGHT { F5 }
-#endif
+// // Limit the power draw
+// #ifdef IOS_DEVICE_ENABLE
+//   #define RGBLIGHT_LIMIT_VAL 40
+//   #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
+// #else
+//   #define RGBLIGHT_LIMIT_VAL 80
+//   #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
+// #endif
+
+// #ifdef ENCODER_ENABLE
+// #   define ENCODERS_PAD_A { F4 }
+// #   define ENCODERS_PAD_B { F5 }
+// #   define ENCODERS_PAD_A_RIGHT { F4 }
+// #   define ENCODERS_PAD_B_RIGHT { F5 }
+// #endif
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE

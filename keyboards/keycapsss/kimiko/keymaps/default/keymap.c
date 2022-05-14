@@ -17,6 +17,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "rgb_matrix_map.h"
 
 enum layers {
     _QWERTY,
@@ -38,18 +39,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|                    |------+------+------+------+------+-----------|
  * |  LShift |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '        |
  * |---------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+-----------|
- * |  LCTRL  |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift/Enter|
+ * |  LShift  |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift/Enter|
  * `-------------------------------------------|       /     \      \-----------------------------------------------'
- *                 | LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
+ *                 | LCTRL| LALT| LGUI |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
  *                 `----------------------------------'       '------------------------------------'
  */
 
  [_QWERTY] = LAYOUT(
-    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
+    KC_ESC,   RGB_VAD,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
     KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
     KC_LSFT, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC,  KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-                      KC_LCTL, KC_LGUI, KC_LALT, LOWER,   KC_SPC,   KC_ENT,   RAISE,   KC_BSPC, KC_RGUI, KC_RALT
+    KC_LSFT, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC,  KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
+                      KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,   KC_ENT,   RAISE,   KC_BSPC, KC_RGUI, KC_RALT
 ),
 /* LOWER
  * ,-------------------------------------------.                    ,-----------------------------------------.
@@ -61,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |        |      |      |      |      |      |-------|    |-------|      |   _  |   +  |   {  |   }  |   \  |
  * `-------------------------------------------|       /     \      \-----------------------------------------------'
- *                 | LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
+ *                 | LCTRL| LALT| LGUI |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
  *                 `----------------------------------'       '------------------------------------'
  */
 
@@ -76,20 +77,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   Up  |   9  |   0  |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |-------.    ,-------|      | Left | Down |  Up  |Right |      |
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |-------.    ,-------|      | Left | Down | Right| Right|      |
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
  * |  F7  |  F8  |  F9  | F10  | F11  | F12  |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                 | LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
+ *                 | LCTRL| LALT| LGUI |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
  *                 `----------------------------------'       '------------------------------------'
  */
 
 [_RAISE] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-    KC_F1,  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_UP,    KC_9,    KC_0,    _______,
+    KC_F1,  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT,   KC_RGHT, XXXXXXX,
     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   _______, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
                       _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______
 ),
@@ -97,30 +98,65 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |RESET |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |RGB ON| HUE+ | SAT+ | VAL+ |      |      |                    | PREV | PLAY | NEXT |      |      |      |
+ * |RGB ON| HUE+ | SAT+ | VAL+ |Mode+ |      |                    | PREV | PLAY | NEXT |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | MODE | HUE- | SAT- | VAL- |      |      |-------.    ,-------| VOL+ | MUTE | VOL- |      |      |      |
+ * | MODE | HUE- | SAT- | VAL- |Mode- |      |-------.    ,-------| VOL+ | MUTE | VOL- |      |      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                 |LCTRL| LGUI | LALT |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
+ *                 | LCTRL| LALT| LGUI |LOWER| Space /       \Enter \  |RAISE |BackSP| RGUI | RALT |
  *                 `----------------------------------'       '------------------------------------'
  */
 
 [_ADJUST] = LAYOUT(
     RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                   KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,
-    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                   KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
+    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_MODE_FORWARD, XXXXXXX,          KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,
+    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_MODE_REVERSE, XXXXXXX,          KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                       _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______
   )
 };
 
-
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
     return state;
 }
+
+#ifdef RGB_MATRIX_ENABLE
+void rgb_matrix_indicators_user(void) {
+    if (IS_LAYER_ON(_QWERTY)) {
+        rgb_matrix_set_color_all(100,30,140);
+        // rgb_matrix_set_color(4,100,30,140);
+    } else if (IS_LAYER_ON(_RAISE)) {
+        rgb_matrix_set_color_all(140,30,140);
+    } else if (IS_LAYER_ON(_LOWER)) {
+        rgb_matrix_set_color_all(30,140,100);
+    }
+}
+// void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+//     // for (uint8_t i = led_min; i <= led_max; i++){
+// // rgb_matrix_set_color_all(RGB_RED);
+// //     for (uint8_t j = 0; j < sizeof(LED_LIST_NUMROW); j++) {
+// //         rgb_matrix_set_color(LED_LIST_NUMROW[j], RGB_GREEN);
+// //     }
+//         switch(get_highest_layer(layer_state)) {
+//             case _RAISE:
+//                 rgb_matrix_set_color(3, RGB_BLUE);
+//                 break;
+//             case _LOWER:
+//                 rgb_matrix_set_color(4, RGB_YELLOW);
+//                 break;
+//             default:
+//                 rgb_matrix_set_color_all(RGB_GREEN);
+//                 rgb_matrix_set_color(5, RGB_YELLOW);
+//                 rgb_matrix_set_color(6, RGB_RED);
+//                 break;
+//         } 
+//     }
+
+
+
+#endif
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -333,77 +369,77 @@ bool oled_task_user(void) {
 #endif
 
 
-#ifdef ENCODER_ENABLE
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    // Encoder on master side
-    if (index == 0) {
-        switch (get_highest_layer(layer_state)) {
-            // If the Default (QWERTY) layer is active
-            case _QWERTY:
-                // Arrow Up/Down
-                if (clockwise) {
-                    tap_code(KC_DOWN);
-                } else {
-                    tap_code(KC_UP);
-                }
-                break;
+// #ifdef ENCODER_ENABLE
+// bool encoder_update_user(uint8_t index, bool clockwise) {
+//     // Encoder on master side
+//     if (index == 0) {
+//         switch (get_highest_layer(layer_state)) {
+//             // If the Default (QWERTY) layer is active
+//             case _QWERTY:
+//                 // Arrow Up/Down
+//                 if (clockwise) {
+//                     tap_code(KC_DOWN);
+//                 } else {
+//                     tap_code(KC_UP);
+//                 }
+//                 break;
 
-            // If the RAISE layer is active
-            case _RAISE:
-                // Switch browser tabs
-                if (clockwise) {
-                    tap_code16(LCTL(KC_TAB));
-                } else {
-                    tap_code16(RCS(KC_TAB));
-                }
-                break;
-            // If the ADJUST layer is active
-            case _ADJUST:
-                // RGB brightness up/down
-                if (clockwise) {
-                    rgblight_decrease_val(); // tap_code(RGB_VAD);
-                } else {
-                    rgblight_increase_val(); // tap_code(RGB_VAI);
-                }
-                break;
-        }
-    }
-    // Encoder on slave side
-    else if (index == 1) {
-        switch (get_highest_layer(layer_state)) {
-            // If the Default (QWERTY) layer is active
-            case _QWERTY:
-                // Scroll by Word
-                if (clockwise) {
-                    tap_code16(LCTL(KC_RGHT));
-                } else {
-                    tap_code16(LCTL(KC_LEFT));
-                }
-                break;
+//             // If the RAISE layer is active
+//             case _RAISE:
+//                 // Switch browser tabs
+//                 if (clockwise) {
+//                     tap_code16(LCTL(KC_TAB));
+//                 } else {
+//                     tap_code16(RCS(KC_TAB));
+//                 }
+//                 break;
+//             // If the ADJUST layer is active
+//             case _ADJUST:
+//                 // RGB brightness up/down
+//                 if (clockwise) {
+//                     rgblight_decrease_val(); // tap_code(RGB_VAD);
+//                 } else {
+//                     rgblight_increase_val(); // tap_code(RGB_VAI);
+//                 }
+//                 break;
+//         }
+//     }
+//     // Encoder on slave side
+//     else if (index == 1) {
+//         switch (get_highest_layer(layer_state)) {
+//             // If the Default (QWERTY) layer is active
+//             case _QWERTY:
+//                 // Scroll by Word
+//                 if (clockwise) {
+//                     tap_code16(LCTL(KC_RGHT));
+//                 } else {
+//                     tap_code16(LCTL(KC_LEFT));
+//                 }
+//                 break;
 
-            // If the LOWER layer is active
-            case _LOWER:
-                // Volume up/down
-                if (clockwise) {
-                    tap_code(KC_VOLU);
-                } else {
-                    tap_code(KC_VOLD);
-                }
-                break;
+//             // If the LOWER layer is active
+//             case _LOWER:
+//                 // Volume up/down
+//                 if (clockwise) {
+//                     tap_code(KC_VOLU);
+//                 } else {
+//                     tap_code(KC_VOLD);
+//                 }
+//                 break;
 
-            // If the ADJUST layer is active
-            case _ADJUST:
-                // RGB hue up/down
-                if (clockwise) {
-                    // tap_code(RGB_HUI);
-                    rgblight_increase_hue();
-                } else {
-                    // tap_code(RGB_HUD);
-                    rgblight_decrease_hue();
-                }
-                break;
-        }
-    }
-    return true;
-}
-#endif // ENCODER_ENABLE
+//             // If the ADJUST layer is active
+//             case _ADJUST:
+//                 // RGB hue up/down
+//                 if (clockwise) {
+//                     // tap_code(RGB_HUI);
+//                     rgblight_increase_hue();
+//                 } else {
+//                     // tap_code(RGB_HUD);
+//                     rgblight_decrease_hue();
+//                 }
+//                 break;
+//         }
+//     }
+//     return true;
+// }
+// #endif // ENCODER_ENABLE
