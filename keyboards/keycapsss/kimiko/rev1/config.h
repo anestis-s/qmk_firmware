@@ -42,14 +42,15 @@
 #define RGB_DI_PIN D3
 
 #ifdef RGB_MATRIX_ENABLE
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
+#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
 #    define DRIVER_LED_TOTAL RGBLED_NUM
 #    define RGBLED_NUM 60  // Number of LEDs
 #    define RGB_MATRIX_SPLIT { 30, 30 }  	// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.
 #    define SPLIT_TRANSPORT_MIRROR  // If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable
+#    define SPLIT_LAYER_STATE_ENABLE
 #endif
 
-
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
 // // Limit the power draw
 // #ifdef IOS_DEVICE_ENABLE
 //   #define RGBLIGHT_LIMIT_VAL 40

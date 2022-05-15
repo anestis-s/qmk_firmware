@@ -22,10 +22,8 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define USB_MAX_POWER_CONSUMPTION 500
 #ifdef RGB_MATRIX_ENABLE
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 40
-#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
 // Animations
 // Uncomment any that you want to try. Limited by
 // space on the microcontroller. The defines below mirror
