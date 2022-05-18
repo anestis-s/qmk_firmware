@@ -30,7 +30,55 @@ enum led_location_map {
     LED_E,
     LED_R,
     LED_T,
-
+    LED_G,
+    LED_F,
+    LED_D,
+    LED_S,
+    LED_A,
+    LED_CAPS,
+    LED_LSHIFT,
+    LED_Z,
+    LED_X,
+    LED_C,
+    LED_V,
+    LED_B,
+    LED_SQUARE_LEFT,
+    LED_LSPACE,
+    LED_LMO,
+    LED_LGUI,
+    LED_LALT,
+    LED_LCTRL,
+    
+    LED_6,
+    LED_7,
+    LED_8,
+    LED_9,
+    LED_0,
+    LED_GRV,
+    LED_MINUS,
+    LED_P,
+    LED_O,
+    LED_I,
+    LED_U,
+    LED_Y,
+    LED_H,
+    LED_J,
+    LED_K,
+    LED_L,
+    LED_COLON,
+    LED_QUOTE,
+    LED_RSHIFT,
+    LED_SLASH,
+    LED_FULLSTOP,
+    LED_COMMA,
+    LED_M,
+    LED_N,
+    LED_SQUARE_RIGHT,
+    LED_ENTER,
+    LED_RMO,
+    LED_BACK,
+    LED_RGUI,
+    LED_RALT,
 };
 
 const uint8_t LED_LIST_NUMROW[] = {
@@ -39,6 +87,83 @@ const uint8_t LED_LIST_NUMROW[] = {
     LED_3,
     LED_4,
     LED_5,
+    LED_6,
+    LED_7,
+    LED_8,
+    LED_9,
+    LED_0,
+};
+
+const uint8_t LED_LIST_LETTERS[] = {
+    LED_Q,
+    LED_W,
+    LED_E,
+    LED_R,
+    LED_T,
+    LED_G,
+    LED_F,
+    LED_D,
+    LED_S,
+    LED_A,
+    LED_Z,
+    LED_X,
+    LED_C,
+    LED_V,
+    LED_B,
+    LED_P,
+    LED_O,
+    LED_I,
+    LED_U,
+    LED_Y,
+    LED_H,
+    LED_J,
+    LED_K,
+    LED_L,
+    LED_M,
+    LED_N,
+};
+
+const uint8_t LED_LIST_ARROWS[] = {
+    // 39,43,44,45
+    LED_I,
+    LED_J,
+    LED_K,
+    LED_L,
+};
+
+const uint8_t LED_LIST_HOME_END[] = {
+    LED_U,
+    LED_O
+};
+
+const uint8_t LED_LIST_PGUP_PGDN[] = {
+    LED_Y,LED_H
+};
+
+const uint8_t LED_LIST_BRACKETS[] = {
+    LED_R,
+    LED_T,
+    LED_O,
+    LED_I,
+    LED_U,
+    LED_Y,
+};
+
+const uint8_t LED_LIST_LOWER[] = {
+    LED_Q,
+    LED_W,
+    LED_E,
+    LED_G,
+    LED_F,
+    LED_D,
+    LED_S,
+    LED_A,
+    LED_P,
+    LED_H,
+    LED_J,
+    LED_K,
+    LED_L,
+    LED_COLON,
 };
 
 #endif
