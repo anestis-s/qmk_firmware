@@ -137,7 +137,11 @@ const uint8_t LED_LIST_HOME_END[] = {
 };
 
 const uint8_t LED_LIST_PGUP_PGDN[] = {
-    LED_Y,LED_H
+    LED_T,LED_G
+};
+
+const uint8_t LED_LIST_PR_NXT_WD[] = {
+    LED_M,LED_FULLSTOP
 };
 
 const uint8_t LED_LIST_BRACKETS[] = {
