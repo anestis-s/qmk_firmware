@@ -23,7 +23,7 @@ ENCODER_ENABLE = no       # ENables the use of one or more encoders
 RGBLIGHT_ENABLE = no     # Enable keyboard RGB underglow
 RGB_MATRIX_ENABLE = yes   # Enable per-key lighting
 RGB_MATRIX_DRIVER = WS2812
-RGB_MATRIX_CUSTOM_USER = yes
+RGB_MATRIX_CUSTOM_USER = no
 
 # LTO: Link Time Optimizations.
 # Reduce compiled size, but will automatically disable the legacy TMK Macros and Functions features.
@@ -31,4 +31,4 @@ RGB_MATRIX_CUSTOM_USER = yes
 LTO_ENABLE = yes
 
 
-DEFAULT_FOLDER = keycapsss/kimiko/rev1
+DEFAULT_FOLDER = keycapsss/kimiko_v2/rev1

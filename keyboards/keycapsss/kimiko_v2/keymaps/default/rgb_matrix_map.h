@@ -145,7 +145,7 @@ const uint8_t LED_LIST_PR_NXT_WD[] = {
 };
 
 const uint8_t LED_LIST_NUMKEYS[] = {
-    LED_LGUI,
+    LED_LALT,
     LED_X,
     LED_C,
     LED_V,
