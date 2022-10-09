@@ -60,7 +60,6 @@
 #    define RGB_MATRIX_SPLIT { 30, 30 }  	// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.
 #    define SPLIT_TRANSPORT_MIRROR  // If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable
 #    define SPLIT_LAYER_STATE_ENABLE
-#    define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 // #    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CUSTOM_my_cool_effect
 // #    define RGB_MATRIX_DISABLE_KEYCODES
 // Animations
