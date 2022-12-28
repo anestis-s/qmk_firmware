@@ -155,6 +155,8 @@ const uint8_t LED_LIST_NUMKEYS[] = {
     LED_W,
     LED_E,
     LED_R,
+    LED_LCTRL,
+    LED_LGUI,
 };
 
 const uint8_t LED_LIST_BRACKETS[] = {

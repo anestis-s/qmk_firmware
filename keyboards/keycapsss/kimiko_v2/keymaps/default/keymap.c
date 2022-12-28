@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_LOWER] = LAYOUT(
     KC_F1,   KC_F2,  KC_F3,   KC_F4,   KC_F5,   KC_F6,                      KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-    XXXXXXX, KC_EQL, XXXXXXX, XXXXXXX, KC_EXLM, KC_AT  ,                    XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, KC_EXLM, KC_AT  ,                    XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX,KC_LABK, KC_RABK, KC_HASH, KC_DLR ,                    KC_EQL , KC_ASTR, KC_LPRN, KC_RPRN, KC_AMPR, XXXXXXX,
     XXXXXXX, XXXXXXX,KC_BSLS, KC_SLSH,KC_PERC, KC_CIRC, KC_CUT, KC_DLINE, KC_PLUS, KC_MINS, KC_LCBR, KC_RCBR, KC_PIPE, XXXXXXX,
                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------| Undo  |    | Redo  |------+------+------+------+------+------|
      * |      |      |  1   |  2   |  3   |      |-------|    |-------|      | PRWD |      | NXTWD|      |      |
      * `-----------------------------------------|       /     \      \-----------------------------------------'
-     *                 |    |  0   | LGUI |LOWER| Space /      \Enter \  |RAISE |BackSP| RGUI | RALT  |
+     *                 | ,  |  0   |  .   |LOWER| Space /      \Enter \  |RAISE |BackSP| RGUI | RALT  |
      *                 `---------------------------------'       '-------------------------------------'
      */
 
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, KC_7   , KC_8   , KC_9   , XXXXXXX,                     KC_PGUP, KC_HOME, KC_UP,   KC_END,    XXXXXXX, _______,
     XXXXXXX, XXXXXXX, KC_4   , KC_5   , KC_6   , XXXXXXX,                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT,  XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, KC_1   , KC_2   , KC_3   , XXXXXXX,  KC_UNDO, KC_REDO,  XXXXXXX, KC_PRVWD, XXXXXXX, KC_NXTWD, XXXXXXX, XXXXXXX,
-                      XXXXXXX, KC_0   , _______, _______,  _______, _______,  _______, _______, _______, _______
+                      KC_COMM, KC_0   , KC_DOT , _______,  _______, _______,  _______, _______, _______, _______
 ),
     /* ADJUST (Press LOWER and RAISE together)
      * ,-----------------------------------------.                    ,-----------------------------------------.
